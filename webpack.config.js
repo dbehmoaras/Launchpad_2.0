@@ -1,16 +1,18 @@
 const path = require("path");
 require("dotenv").config();
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    main: path.resolve(__dirname, "./src/client/index.tsx"),
+    main: ["./src/client/index.tsx"],
   },
   output: {
-    path: path.resolve(__dirname, "./build"),
     filename: "bundle.js",
+    path: path.resolve(__dirname, "./build"),
   },
-  devtool: "source-map",
+  devtool: "inline-source-map",
   resolve: {
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
   },
@@ -34,13 +36,20 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin({
+      template: "./index.html",
+    }),
+  ],
+  target: "web",
   devServer: {
+    hot: true,
     port: process.env.DEV_PORT,
     historyApiFallback: true,
     static: {
       publicPath: "./build",
-      directory: path.join(__dirname, "./src/assets"),
     },
+    // contentBase: path.resolve(__dirname, "./build"),
     proxy: {
       "/": {
         target: `http://localhost:${process.env.SERVER_PORT}`,

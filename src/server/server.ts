@@ -25,7 +25,7 @@ mainServerApp.use(
 
 mainServerApp.get("/", (req, res) => {
   console.log("***** SERVING ROOT OF LANDING PAGE ( / )");
-  return res.sendFile(path.resolve(__dirname + "./../index.html"));
+  return res.sendFile(path.resolve(__dirname + "./../../index.html"));
 });
 
 mainServerApp.get("/test", (req, res) => {
