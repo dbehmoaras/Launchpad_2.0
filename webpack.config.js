@@ -36,24 +36,25 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin({
-      template: "./index.html",
-    }),
-  ],
   target: "web",
   devServer: {
     hot: true,
     port: process.env.DEV_PORT,
     historyApiFallback: true,
     static: {
-      publicPath: "./build",
+      directory: "./build",
     },
     // contentBase: path.resolve(__dirname, "./build"),
     proxy: {
       "/": {
         target: `http://localhost:${process.env.SERVER_PORT}`,
         secure: false,
+        bypass: function (req, res, proxyOptions) {
+          if (req.headers.accept.indexOf("html") !== -1) {
+            console.log("Skipping proxy for browser request.");
+            return "/index.html";
+          }
+        },
       },
     },
   },
