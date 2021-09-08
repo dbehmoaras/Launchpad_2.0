@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-// import { ContextDetailsProvider } from "../context/OrderDetails";
+import { MainContextProvider } from "../../src/client/context/MainContext";
 
 const renderWithContext = (ui, options) => {
-  return render(ui, { wrapper: ContextProvider, ...options });
+  return render(ui, { wrapper: MainContextProvider, ...options });
 };
 
 //re-export everything

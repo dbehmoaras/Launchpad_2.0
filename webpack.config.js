@@ -44,7 +44,6 @@ module.exports = {
     static: {
       directory: "./build",
     },
-    // contentBase: path.resolve(__dirname, "./build"),
     proxy: {
       "/": {
         target: `http://localhost:${process.env.SERVER_PORT}`,

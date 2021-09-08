@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 
-const MainContext = createContext({});
+const MainContext = createContext([]);
 
 export function useMainContext() {
   const context = useContext(MainContext);
@@ -66,10 +66,7 @@ export function MainContextProvider(props) {
       updateForceEffect,
     };
 
-    return [
-      { ...loginState, ...stateOne, ...stateTwo, forceEffect },
-      updateFunctions,
-    ];
+    return [{ loginState, stateOne, stateTwo, forceEffect }, updateFunctions];
   }, [loginState, stateOne, stateTwo, forceEffect]);
   return <MainContext.Provider value={value} {...props} />;
 }
