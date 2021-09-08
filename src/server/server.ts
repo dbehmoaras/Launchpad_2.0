@@ -1,13 +1,10 @@
-import express = require("express");
-import cors = require("cors");
-import path = require("path");
-import cookieParser = require("cookie-parser");
-import dotenv = require("dotenv");
-dotenv.config();
+import express from "express";
+import cors from "cors";
+import path from "path";
+import cookieParser from "cookie-parser";
+import constants from "../../constants/constants";
 
 const mainServerApp = express();
-console.log("dir", __dirname);
-// console.log("path join", path.join(__dirname, "./../assets"));
 
 mainServerApp.use(express.json());
 mainServerApp.use(express.urlencoded({ extended: true }));
@@ -29,7 +26,7 @@ mainServerApp.get("/", (req, res) => {
 });
 
 mainServerApp.get("/test", (req, res) => {
-  console.log("***** TEST ENDPOINT HIT *****");
+  // console.log("***** TEST ENDPOINT HIT *****");
   return res.status(200).json({ test: true });
 });
 
@@ -39,7 +36,12 @@ mainServerApp.use("*", (req, res) => {
   });
 });
 
-const mainServerPort = process.env.SERVER_PORT;
-mainServerApp.listen(mainServerPort, () => {
-  console.log("Listening on port:", mainServerPort);
-});
+// export default mainServerApp;
+const mainServerPort = constants.SERVER_PORT;
+if (process.env.NODE_ENV !== "test") {
+  console.log("APP LISTEN");
+  mainServerApp.listen(mainServerPort, () => {
+    console.log("Listening on port:", mainServerPort);
+  });
+}
+export default mainServerApp;

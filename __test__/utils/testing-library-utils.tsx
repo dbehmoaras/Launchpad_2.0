@@ -7,4 +7,5 @@ const renderWithContext = (ui, options) => {
 
 //re-export everything
 export * from "@testing-library/react";
+export * from "@testing-library/jest-dom";
 export { renderWithContext as render };

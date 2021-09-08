@@ -33,7 +33,7 @@ export function MainContextProvider(props) {
 
   useEffect(() => {
     //insert logic for re-render on useEffect
-    console.log("***** MAIN CONTEXT useEffect triggered by forceEffect *****");
+    // console.log("***** MAIN CONTEXT useEffect triggered by forceEffect *****");
   }, [forceEffect]);
 
   //optimization that keeps state memoized so lifecycle only runs on changes
