@@ -12,9 +12,6 @@ mainServerApp.listen(srvPortModified, () => {
   console.log("TEST SERVER listening on port:", srvPortModified);
 });
 
-global.testServer = mainServerApp;
-console.log(global.testServer);
-
 /**
  * Server must be up and running in order for this test suite to run
  */
