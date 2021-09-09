@@ -136,3 +136,8 @@ dist
 .tern-port
 
 package-lock.json
+
+build/bundle.js
+build/bundle.js.LICENCE.txt
+build/bundle.js.map
+
