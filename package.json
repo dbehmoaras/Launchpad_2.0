@@ -1,5 +1,5 @@
 {
-  "name": "stockwatch",
+  "name": "launchpad-2",
   "version": "0.0.1",
   "description": "",
   "main": "src/client/index.tsx",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ResearchGlobal/stockwatch.git"
+    "url": "git+https://github.com/dbehmoaras/Launchpad_2.0.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ResearchGlobal/stockwatch/issues"
+    "url": "https://github.com/dbehmoaras/Launchpad_2.0/issues"
   },
-  "homepage": "https://github.com/ResearchGlobal/stockwatch#readme",
+  "homepage": "https://github.com/dbehmoaras/Launchpad_2.0#readme",
   "dependencies": {
     "@babel/runtime": "^7.13.17",
     "@material-ui/core": "^4.12.3",
