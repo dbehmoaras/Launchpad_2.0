@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/client/index.tsx",
   "scripts": {
-    "test": "NODE_ENV=test jest --verbose ",
+    "test": "NODE_ENV=test jest --verbose --env=jsdom",
     "build": "NODE_ENV=development webpack",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --hot\" \"cross-env NODE_ENV=development nodemon src/server/server.ts\""
   },

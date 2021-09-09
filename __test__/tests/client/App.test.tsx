@@ -3,6 +3,10 @@ import App from "../../../src/client/App";
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 
+/**
+ * @jest-environment jsdom
+ */
+
 describe("App.tsx Suite: UI & Context", () => {
   let AppHeader;
   let Button;
