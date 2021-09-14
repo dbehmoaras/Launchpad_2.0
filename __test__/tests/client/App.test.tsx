@@ -2,6 +2,7 @@ import { render, screen } from "./../../utils/testing-library-utils";
 import App from "../../../src/client/App";
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
+// import "@testing-library/jest-dom/extend-expect";
 
 /**
  * @jest-environment jsdom

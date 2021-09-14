@@ -8,7 +8,7 @@ const serverString = LOCAL_HOST + srvPortModified;
 
 // console.log(mainServerApp);
 // mainServerApp.close();
-mainServerApp.listen(srvPortModified, () => {
+const closeThis = mainServerApp.listen(srvPortModified, () => {
   console.log("TEST SERVER listening on port:", srvPortModified);
 });
 
@@ -26,3 +26,5 @@ describe("test route", () => {
       .expect(200);
   });
 });
+
+closeThis.close();

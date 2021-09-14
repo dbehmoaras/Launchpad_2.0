@@ -1,7 +1,8 @@
 import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
 // import mainServerApp
 
-import { server } from "./mocks/server";
+import { server } from "./__test__/mocks/server";
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());
 
